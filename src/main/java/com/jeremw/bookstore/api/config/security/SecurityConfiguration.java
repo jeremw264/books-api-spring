@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -31,6 +32,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.PATCH;
 /**
  * Configuration class for handling security-related settings.
  *
+ * <p>
+ * This class configures security settings including CORS, authentication manager, and JWT
+ * authentication filter.
+ * </p>
+ *
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024
@@ -41,6 +47,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.PATCH;
 @EnableMethodSecurity(jsr250Enabled = true)
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+
+	private final AccessDeniedEntryPoint accessDeniedEntryPoint;
+
+	private final UnauthenticatedEntryPoint unauthenticatedEntryPoint;
+
+	private final JwtAuthFilter jwtAuthFilter;
+
 
 	/**
 	 * Configures the security filter chain.
@@ -59,10 +72,15 @@ public class SecurityConfiguration {
 						.requestMatchers("/swagger-ui/**", "/v3/api-docs/**")
 						.permitAll()
 						.anyRequest()
-						.permitAll())
-				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+						.authenticated())
+				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(unauthenticatedEntryPoint)
+						.accessDeniedHandler(accessDeniedEntryPoint))
+				.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
 		return http.build();
 	}
+
 
 	/**
 	 * Configures the CORS filter.

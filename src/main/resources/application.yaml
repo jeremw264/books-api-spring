@@ -5,8 +5,21 @@ spring:
 server:
   port: 3001
   servlet:
-    context-path: api/v1
+    context-path: /api/v1
 
 logging:
   level:
     root: info
+
+auth:
+  access-token:
+    name: accessToken
+    secret: 586B633834416E396D7436753879382F423F4428482B4C6250655367566B5970
+    # Min lenght 32 char
+    expiration-msec: 3000000000000
+
+  refresh-token:
+    name: refreshToken
+    secret: 586B633834416E396D7436753879382F423F4428482B4C6250655367566B5970
+    # Min lenght 32 char
+    expiration-msec: 6000000000000
