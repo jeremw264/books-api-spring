@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
  * Extends ResourceException class.
  * This exception can be thrown when there is an issue related to user resources.
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

@@ -7,6 +7,18 @@ This project is a Spring Boot application for managing books
 - Java Development Kit (JDK) 17 or higher.
 - Apache Maven for dependency management.
 
+## Technologies Used
+
+- **Spring Boot**: Framework for building Java applications
+- **Spring Data JPA**: Part of the larger Spring Data framework, provides easy data access and persistence
+- **Spring Security**: Authentication and access control framework
+- **Spring Web**: For building web applications with Spring
+- **JSON Web Token (JWT)**: For secure authentication and authorization
+- **Springdoc OpenAPI**: For generating API documentation with Swagger UI
+- **MapStruct**: For object mapping
+- **H2 Database**: Lightweight, in-memory database for development and testing
+- **Lombok**: Library for reducing boilerplate code in Java
+
 ## Installation
 
 1. Clone this repository to your local machine:
@@ -34,3 +46,7 @@ mvn spring-boot:run
 ```
 
 The application will be available at [http://localhost:3001](http://localhost:3001).
+
+## Swagger Documentation
+
+The API documentation is available via Swagger at http://localhost:3001/api/v1/swagger-ui/index.html#/

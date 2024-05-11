@@ -1,7 +1,5 @@
 package com.jeremw.bookstore.api.user;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +30,7 @@ import static org.mockito.Mockito.when;
  * @since 11/05/2024
  */
 @ExtendWith(SpringExtension.class)
-class UserServiceTests 	{
+class UserServiceTests {
 
 	@InjectMocks
 	private UserServiceImpl userService;
@@ -234,7 +232,7 @@ class UserServiceTests 	{
 		when(passwordEncoder.encode(updateUserForm.getPassword())).thenReturn(updateUserForm.getPassword());
 		when(userRepository.save(userUpdatedExpected)).thenReturn(userUpdatedExpected);
 
-		User userUpdated = userService.updateUserById(user.getId(),updateUserForm);
+		User userUpdated = userService.updateUserById(user.getId(), updateUserForm);
 
 		assertNotNull(userUpdated);
 		assertEquals(userUpdatedExpected, userUpdated);
@@ -257,7 +255,7 @@ class UserServiceTests 	{
 		when(userRepository.findById(userId)).thenReturn(Optional.empty());
 		when(passwordEncoder.encode("password")).thenReturn("password");
 
-		assertThrows(UserResourceException.class, () -> userService.updateUserById(userId,updateUserForm));
+		assertThrows(UserResourceException.class, () -> userService.updateUserById(userId, updateUserForm));
 
 		verify(userRepository, times(1)).findById(userId);
 	}
@@ -287,7 +285,7 @@ class UserServiceTests 	{
 		doThrow(IllegalArgumentException.class).when(userRepository).save(userUpdatedExpected);
 		when(passwordEncoder.encode(updateUserForm.getPassword())).thenReturn(updateUserForm.getPassword());
 
-		assertThrows(UserResourceException.class, () -> userService.updateUserById(user.getId(),updateUserForm));
+		assertThrows(UserResourceException.class, () -> userService.updateUserById(user.getId(), updateUserForm));
 
 		verify(userRepository, times(1)).findById(user.getId());
 		verify(passwordEncoder, times(1)).encode(updateUserForm.getPassword());

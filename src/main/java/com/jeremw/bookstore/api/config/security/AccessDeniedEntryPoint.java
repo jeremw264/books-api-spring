@@ -23,7 +23,6 @@ import org.springframework.security.web.access.AccessDeniedHandler;
  * relevant information.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

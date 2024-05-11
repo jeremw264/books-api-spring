@@ -22,7 +22,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
  * authentication provider and password encoder.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

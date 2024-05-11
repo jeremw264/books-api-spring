@@ -22,7 +22,6 @@ import lombok.NoArgsConstructor;
  * associated user, token value, expiration date, and revocation status.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

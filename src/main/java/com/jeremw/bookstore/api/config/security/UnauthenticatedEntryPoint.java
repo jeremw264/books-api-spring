@@ -22,7 +22,6 @@ import org.springframework.security.web.AuthenticationEntryPoint;
  * sends an unauthorized response with relevant information.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

@@ -11,7 +11,6 @@ import org.springframework.http.HttpStatus;
  * This exception is used to handle errors related to authentication resources.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

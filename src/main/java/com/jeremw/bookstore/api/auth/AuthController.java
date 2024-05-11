@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
  * logout.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

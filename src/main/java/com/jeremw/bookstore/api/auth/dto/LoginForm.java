@@ -13,7 +13,6 @@ import lombok.Data;
  * This class contains the username and password for user authentication.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

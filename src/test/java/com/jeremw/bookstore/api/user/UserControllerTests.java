@@ -1,8 +1,5 @@
 package com.jeremw.bookstore.api.user;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -184,10 +181,10 @@ class UserControllerTests {
 
 		UserDto userDTOExpected = UserMapper.INSTANCE.toDto(userUpdated);
 
-		when(userService.updateUserById(user.getId(),updateUserForm)).thenReturn(userUpdated);
+		when(userService.updateUserById(user.getId(), updateUserForm)).thenReturn(userUpdated);
 
 		MvcResult res = mvc
-				.perform(patch(BASE_PATH+"/"+user.getId()).content(objectMapper.writeValueAsString(updateUserForm))
+				.perform(patch(BASE_PATH + "/" + user.getId()).content(objectMapper.writeValueAsString(updateUserForm))
 						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -198,7 +195,7 @@ class UserControllerTests {
 		assertNotNull(userDtoUpdated);
 		assertEquals(userDTOExpected, userDtoUpdated);
 
-		verify(userService, times(1)).updateUserById(user.getId(),updateUserForm);
+		verify(userService, times(1)).updateUserById(user.getId(), updateUserForm);
 
 	}
 

@@ -45,7 +45,7 @@ public interface UserService {
 	/**
 	 * Updates an existing user based on the provided form.
 	 *
-	 * @param userId The unique identifier of user.
+	 * @param userId         The unique identifier of user.
 	 * @param updateUserForm The form containing information to update an existing user.
 	 * @return User object representing the updated user.
 	 * @throws UserResourceException if an error occurs while updating the user.

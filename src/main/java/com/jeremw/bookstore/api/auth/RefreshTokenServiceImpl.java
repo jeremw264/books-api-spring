@@ -23,7 +23,6 @@ import org.springframework.web.util.WebUtils;
 /**
  * Service implementation for managing refresh tokens and related operations.
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024

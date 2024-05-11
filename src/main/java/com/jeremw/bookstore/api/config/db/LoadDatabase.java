@@ -42,7 +42,7 @@ public class LoadDatabase {
 
 			CreateUserForm createUserForm = CreateUserForm.builder()
 					.username("root")
-					.email("root@univ-lille.fr")
+					.email("root@book-api.fr")
 					.password("toor")
 					.build();
 

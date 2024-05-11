@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Controller interface for managing user-related HTTP endpoints.
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024
@@ -86,7 +85,7 @@ public interface UserController {
 	@ApiResponse(responseCode = "500", description = "Error while updating the user with the ID.",
 			content = @Content(schema = @Schema(implementation = ResourceExceptionDTO.class)))
 	@PatchMapping("/{userId}")
-	ResponseEntity<UserDto> updateUserById(@PathVariable Long userId,@Valid @RequestBody UpdateUserForm updateUserForm)
+	ResponseEntity<UserDto> updateUserById(@PathVariable Long userId, @Valid @RequestBody UpdateUserForm updateUserForm)
 			throws UserResourceException;
 
 	/**

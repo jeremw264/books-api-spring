@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
  * tokens.
  * </p>
  *
-
  * @author Jérémy Woirhaye
  * @version 1.0
  * @since 11/05/2024
