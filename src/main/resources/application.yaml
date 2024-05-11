@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: books-api
+
+server:
+  port: 3001
+  servlet:
+    context-path: api/v1
+
+logging:
+  level:
+    root: info
